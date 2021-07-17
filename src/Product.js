@@ -3,7 +3,7 @@ function Product(props) {
     <div>
       <h1>{props.product.name}</h1>
       <h2>{props.product.price}</h2>
-      <button>Add to basket</button>
+      <button onClick={props.addToBasket}>Add to basket</button>
     </div>
   )
 }
