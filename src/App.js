@@ -1,24 +1,28 @@
 import './App.css';
 import Products from './Products'
 import Basket from './Basket'
-import {useState} from 'react'
+import { useState } from 'react'
 import Nav from './Nav'
 import initialProducts from './initialProducts';
 
 function App() {
-  const [products, setProducts] = useState(initialProducts)
+  const [products] = useState(initialProducts)
   const [shoppingBasket, setShoppingBasket] = useState([])
   const [currentPage, setCurrentPage] = useState('products')
 
-  const setPage = (page) => {   
+  const setPage = (page) => {
     setCurrentPage(page)
+  }
+
+  const addToBasket = (product) => {
+    setShoppingBasket([...shoppingBasket, product])
   }
 
   return (
     <div className="App">
-      <Nav setPage={setPage}/> 
-      {currentPage === 'products' ? <Products products={products}/> : ""}
-      {currentPage === 'basket' ? <Basket shoppingBasket={shoppingBasket}/> : ""}
+      <Nav setPage={setPage} />
+      {currentPage === 'products' ? <Products products={products} /> : ""}
+      {currentPage === 'basket' ? <Basket shoppingBasket={shoppingBasket} /> : ""}
     </div>
   );
 }
