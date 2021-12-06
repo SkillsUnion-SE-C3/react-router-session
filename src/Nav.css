@@ -8,3 +8,7 @@
   cursor: pointer;
   font-weight: 600;
 }
+
+a {
+  margin: 20px;
+}

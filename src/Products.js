@@ -1,8 +1,10 @@
+import { Link, Outlet } from 'react-router-dom'
+
 function Products(props) {
 
   const renderProducts = () => {
     return props.products.map((product) => {
-      return <p key={product.name}>{product.name}</p>
+      return <Link state={product} key={product.name} to={`/products/${product.name}`}>{product.name}</Link>
     })
   }
 
@@ -10,6 +12,7 @@ function Products(props) {
     <div>
       <h3>Products</h3>
       {renderProducts()}
+      <Outlet />
     </div>
   );
 }

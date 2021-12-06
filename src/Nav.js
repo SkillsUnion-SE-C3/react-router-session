@@ -1,12 +1,14 @@
 import './Nav.css'
+import { Link } from 'react-router-dom'
 
-function Nav(props) {
-    return (
-      <nav className="Nav">
-        <p onClick={() => props.setPage('products')}>PRODUCTS</p>
-        <p onClick={() => props.setPage('basket')}>BASKET</p>
-      </nav>
-    )
-  }
-  
+function Nav() {
+  return (
+    <nav className="Nav">
+      <Link to="/">HOME</Link>
+      <Link to="products">PRODUCTS</Link>
+      <Link to="basket">BASKET</Link>
+    </nav>
+  )
+}
+
 export default Nav
